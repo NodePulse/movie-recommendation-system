@@ -4,7 +4,7 @@ import pickle
 
 movies = pickle.load(open("movies.pkl", 'rb'))
 with open('similarity.pkl') as fin:
-    pickle.load(fin)
+    similarity = pickle.load(fin)
 
 st.title("Movie Recommendation System")
 
