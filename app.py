@@ -1,16 +1,16 @@
 import streamlit as st
 import pickle
-import requests
+# import requests
 
 movies = pickle.load(open("movies.pkl", 'rb'))
 similarity = pickle.load(open("similarity.pkl", 'rb'))
 
 st.title("Movie Recommendation System")
 
-def fetch_poster(movie_id):
-    response = requests.get("https://api.themoviedb.org/3/movie/{}?api_key=d832395be4f69b0fb93e41c73843f195&language=en-US".format(movie_id))
-    data = response.json()
-    return "https://image.tmdb.org/t/p/w500/" + data['poster_path']
+# def fetch_poster(movie_id):
+#     response = requests.get("https://api.themoviedb.org/3/movie/{}?api_key=d832395be4f69b0fb93e41c73843f195&language=en-US".format(movie_id))
+#     data = response.json()
+#     return "https://image.tmdb.org/t/p/w500/" + data['poster_path']
 
 
 def recommend(movie, movies):
