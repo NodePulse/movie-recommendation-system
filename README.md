@@ -16,9 +16,7 @@ A content-based movie recommendation system built with Python, Pandas, Scikit-le
 
 ## 🖼️ UI Preview
 
-*(Once you deploy your Streamlit app, you can capture a screenshot and place it in a `public/` folder, then update this path.)*
-
-![UI Preview Placeholder](./public/movie-recommender-ui-preview.png)
+![UI Preview Placeholder](./public/ui-preview.png)
 
 ---
 
@@ -49,12 +47,11 @@ To set up and run this project locally, follow these steps:
 1.  **Clone the repository**:
 
     ```bash
-    git clone [https://github.com/your-username/your-movie-recommender.git](https://github.com/your-username/your-movie-recommender.git)
-    cd your-movie-recommender
+    git clone [https://github.com/NodePulse/movie-recommendation-system.git]
+    cd movie-recommendation-system
     ```
-    *(Remember to replace `your-username/your-movie-recommender.git` with your actual repository URL)*
 
-2.  **Create and activate a virtual environment** (highly recommended):
+2.  **Create and activate a virtual environment** (recommended):
 
     ```bash
     python -m venv venv
@@ -74,7 +71,17 @@ To set up and run this project locally, follow these steps:
     Place `tmdb_5000_movies.csv` and `tmdb_5000_credits.csv` into a `dataset/` folder in the root of your project directory.
     *(You can typically find these datasets on Kaggle or similar data science platforms, e.g., [TMDB 5000 Movie Dataset](https://www.kaggle.com/datasets/tmdb/tmdb-5000-movie-dataset))*
 
-5.  **Run the Jupyter Notebook to preprocess data and train the model**:
+5.  **Setup Environment Variables (Optional for local, but essential for poster fetching)**
+
+    Create a `.env` file in the root of your project directory and add your TMDB API key:
+
+    ```env
+    # .env
+    MY_API_KEY = "YOUR_TMDB_API_KEY_HERE"
+    ```
+    *Note: This key is used if you uncomment the TMDB API calls in `app.py` for fetching movie posters. Make sure to get your own API key from [The Movie Database (TMDb)](https://www.themoviedb.org/documentation/api) and keep it secure. Never commit your API keys directly to public repositories.*
+
+6.  **Run the Jupyter Notebook to preprocess data and train the model**:
     Open `project.ipynb` in your preferred Jupyter environment (Jupyter Lab, Jupyter Notebook, VS Code with Jupyter extension) and execute all cells. This process will generate two crucial files:
     * `movies.pkl`: The processed DataFrame containing clean movie data.
     * `similarity.pkl`: The cosine similarity matrix used for recommendations.
@@ -87,7 +94,7 @@ To set up and run this project locally, follow these steps:
     jupyter lab project.ipynb
     ```
 
-6.  **Run the Streamlit Application**:
+7.  **Run the Streamlit Application**:
 
     ```bash
     streamlit run app.py
@@ -105,7 +112,8 @@ This project can be easily deployed on platforms that support Streamlit applicat
 1.  Ensure your `app.py`, `requirements.txt`, `movies.pkl`, `similarity.pkl`, and `dataset/` folder are all pushed to your GitHub repository.
 2.  Go to [Streamlit Community Cloud](https://share.streamlit.io/).
 3.  Click "New app" and connect your GitHub repository. Select the main branch and `app.py` as the main file path.
-4.  Click "Deploy!". Streamlit will handle the rest.
+4.  If your app uses environment variables, configure them in the "Advanced settings" section during deployment.
+5.  Click "Deploy!". Streamlit will handle the rest.
 
 ### For Render:
 
@@ -116,7 +124,8 @@ This project can be easily deployed on platforms that support Streamlit applicat
 5.  **Build Command**: `pip install -r requirements.txt` (Render usually infers this)
 6.  **Start Command**: `streamlit run app.py --server.port $PORT --server.enableCORS false`
     *(Note: `--server.enableCORS false` might be needed for some deployments.)*
-7.  Select your desired plan type and deploy.
+7.  If using environment variables (e.g., for `MY_API_KEY`), configure them in Render's environment variables section for your service.
+8.  Select your desired plan type and deploy.
 
 ---
 
