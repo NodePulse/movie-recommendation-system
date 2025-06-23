@@ -11,9 +11,20 @@ api_key = os.getenv("MY_API_KEY")
 # Load data
 movies = pickle.load(open("movies.pkl", 'rb'))
 similarity = pickle.load(open("similarity.pkl", 'rb'))
-print(movies.columns)
 
 st.title("🎬 Movie Recommendation System")
+st.markdown("""
+Welcome to the **Movie Recommendation System**! 🎥🍿  
+This app helps you discover movies similar to your favorite ones using content-based filtering.  
+Simply choose a movie from the dropdown, and it will suggest 5 similar movies along with their posters.
+
+**Features:**
+- Instant recommendations from a curated movie dataset
+- Movie posters fetched live from TMDB (The Movie Database)
+- Clean, interactive UI built with Streamlit
+
+🔍 Powered by machine learning and cosine similarity.
+""")
 
 # Function to fetch poster from TMDB
 def fetch_poster(movie_id):
