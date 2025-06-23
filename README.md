@@ -7,7 +7,7 @@ A content-based movie recommendation system built with Python, Pandas, Scikit-le
 ## 🔗 Live Demo (Coming Soon!)
 
 <p>
-  <a href="YOUR_RENDER_DEPLOYMENT_URL_HERE" target="_blank">
+  <a href="https://movie-recommendation-system-kixgk3ji92pq8fappsurr9b.streamlit.app/" target="_blank">
     <img src="https://img.shields.io/badge/🚀%20Live%20App-Movie%20Recommender-red?style=for-the-badge&logo=streamlit&logoColor=white" alt="Live App Badge" />
   </a>
 </p>
