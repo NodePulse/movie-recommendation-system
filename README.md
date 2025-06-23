@@ -4,7 +4,7 @@ A content-based movie recommendation system built with Python, Pandas, Scikit-le
 
 ---
 
-## 🔗 Live Demo (Coming Soon!)
+## 🔗 Live Demo
 
 <p>
   <a href="https://movie-recommendation-system-kixgk3ji92pq8fappsurr9b.streamlit.app/" target="_blank">
@@ -47,7 +47,7 @@ To set up and run this project locally, follow these steps:
 1.  **Clone the repository**:
 
     ```bash
-    git clone [https://github.com/NodePulse/movie-recommendation-system.git]
+    git clone https://github.com/NodePulse/movie-recommendation-system.git
     cd movie-recommendation-system
     ```
 
